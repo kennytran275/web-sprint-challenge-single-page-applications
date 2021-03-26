@@ -6,7 +6,6 @@ export default function MemberForm(props) {
   const onChange = (evt) => {
     const { name, value } = evt.target;
     update(name, value);
-    debugger;
   };
 
   const onSubmit = (evt) => {
@@ -15,8 +14,8 @@ export default function MemberForm(props) {
   };
 
   return (
-    <form className="form container" onSubmit={onSubmit}>
-      <div className="form-group inputs">
+    <form onSubmit={onSubmit}>
+      <div>
         <label>
           {`Full Name `}
           <input
@@ -40,7 +39,7 @@ export default function MemberForm(props) {
         </label>
 
         <label>
-          {` Role `}
+          {` Select your pizza size `}
           <select name="pizzaSize" value={values.pizzaSize} onChange={onChange}>
             <option value="">------select size------</option>
             <option value="small">Small</option>

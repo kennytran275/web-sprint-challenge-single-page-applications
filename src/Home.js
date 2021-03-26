@@ -3,7 +3,6 @@ import React from "react";
 import { useHistory } from "react-router-dom";
 
 export default function Home() {
-
   const history = useHistory();
 
   const routeToPizza = () => {
@@ -12,9 +11,7 @@ export default function Home() {
 
   return (
     <div>
-      <button onClick={routeToPizza}>
-        Custom Pizza Form
-      </button>
+      <button onClick={routeToPizza}>Custom Pizza Form</button>
     </div>
   );
 }

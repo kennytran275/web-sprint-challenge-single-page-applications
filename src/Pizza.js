@@ -1,11 +1,12 @@
 import React from "react";
 
 export default function MemberForm(props) {
-  const { values, update, submit } = props;
+  const { values, disabled, submit, change, errors } = props;
 
   const onChange = (evt) => {
-    const { name, value } = evt.target;
-    update(name, value);
+    const { name, value, type, checked } = evt.target;
+    const valueToUse = type === "checkbox" ? checked : value;
+    change(name, valueToUse);
   };
 
   const onSubmit = (evt) => {
@@ -48,8 +49,61 @@ export default function MemberForm(props) {
           </select>
         </label>
 
+        <label>
+          {` Special Instructions `}
+          <input
+            name="specialInstructions"
+            value={values.specialInstructions}
+            type="text"
+            onChange={onChange}
+          />
+        </label>
+
+        <div>
+          <h4>Toppings</h4>
+          <label>
+            Cheese
+            <input
+              type="checkbox"
+              name="cheese"
+              checked={values.cheese}
+              onChange={onChange}
+            />
+          </label>
+
+          <label>
+            Pepperoni
+            <input
+              type="checkbox"
+              name="pepperoni"
+              checked={values.pepperoni}
+              onChange={onChange}
+            />
+          </label>
+
+          <label>
+            Sausage
+            <input
+              type="checkbox"
+              name="sausage"
+              checked={values.sausage}
+              onChange={onChange}
+            />
+          </label>
+
+          <label>
+            Mushroom
+            <input
+              type="checkbox"
+              name="mushroom"
+              checked={values.mushroom}
+              onChange={onChange}
+            />
+          </label>
+        </div>
+
         <div className="submit">
-          <button>Submit</button>
+          <button id="submitBtn" disabled={disabled}>Submit</button>
         </div>
       </div>
     </form>

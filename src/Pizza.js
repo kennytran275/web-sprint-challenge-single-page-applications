@@ -106,11 +106,6 @@ export default function MemberForm(props) {
           <button id="submitBtn" disabled={disabled}>Submit</button>
         </div>
 
-        <div>
-          <div>{errors.name}</div>
-          <div>{errors.email}</div>
-        </div>
-
       </div>
       
     </form>

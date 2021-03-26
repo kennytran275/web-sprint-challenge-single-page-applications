@@ -82,8 +82,6 @@ export default function PizzaForm() {
       email: formValues.email.trim(),
     };
 
-    if (!newOrder.name || !newOrder.email) return;
-
     setOrders([...orders, newOrder]);
 
     setFormValues(initialFormValues);
@@ -94,6 +92,7 @@ export default function PizzaForm() {
       setDisabled(!valid);
     });
   }, [formValues]);
+  
   return (
     <div>
       <h1>Form App</h1>

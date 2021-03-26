@@ -9,6 +9,5 @@ export default yup.object().shape({
     .string()
     .email("must be a valid email")
     .required("email is required"),
-  password: yup.string().required("password is required"),
   termsOfService: yup.boolean(),
 });

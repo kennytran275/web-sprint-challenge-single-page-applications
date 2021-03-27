@@ -10,4 +10,7 @@ export default yup.object().shape({
     .email("must be a valid email")
     .required("email is required"),
   cheese: yup.boolean(),
+  pepperoni: yup.boolean(),
+  sausage: yup.boolean(),
+  mushroom: yup.boolean(),
 });

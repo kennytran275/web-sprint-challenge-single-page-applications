@@ -1,12 +1,13 @@
 import React from "react";
 
 export default function MemberForm(props) {
-  const { values, disabled, submit, change, errors } = props;
+  const { values, disabled, submit, change } = props;
 
   const onChange = (evt) => {
     const { name, value, type, checked } = evt.target;
     const valueToUse = type === "checkbox" ? checked : value;
     change(name, valueToUse);
+    debugger;
   };
 
   const onSubmit = (evt) => {
@@ -103,11 +104,11 @@ export default function MemberForm(props) {
         </div>
 
         <div className="submit">
-          <button id="submitBtn" disabled={disabled}>Submit</button>
+          <button id="submitBtn" disabled={disabled}>
+            Submit
+          </button>
         </div>
-
       </div>
-      
     </form>
   );
 }

@@ -69,17 +69,16 @@ export default function PizzaForm() {
     });
   };
 
-  const updateForm = (inputName, inputValue) => {
-    setFormValues({
-      ...formValues,
-      [inputName]: inputValue,
-    });
-  };
-
   const submitForm = () => {
     const newOrder = {
       name: formValues.name.trim(),
       email: formValues.email.trim(),
+      pizzaSize: formValues.pizzaSize,
+      specialInstructions: formValues.specialInstructions.trim(),
+      cheese: formValues.cheese,
+      pepperoni: formValues.pepperoni,
+      sausage: formValues.sausage,
+      mushroom: formValues.mushroom,
     };
 
     setOrders([...orders, newOrder]);
@@ -92,13 +91,12 @@ export default function PizzaForm() {
       setDisabled(!valid);
     });
   }, [formValues]);
-  
+
   return (
     <div>
       <h1>Form App</h1>
       <Pizza
         values={formValues}
-        update={updateForm}
         submit={submitForm}
         change={inputChange}
         disabled={disabled}

@@ -9,6 +9,12 @@ export default yup.object().shape({
     .string()
     .email("must be a valid email")
     .required("email is required"),
+  specialInstructions: yup
+    .string(),
+  pizzaSize: yup
+    .string()
+    .oneOf(["small", "medium", "large"])
+    .required("pizza size is required"),
   cheese: yup.boolean(),
   pepperoni: yup.boolean(),
   sausage: yup.boolean(),

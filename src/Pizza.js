@@ -1,13 +1,12 @@
 import React from "react";
 
-export default function MemberForm(props) {
-  const { values, disabled, submit, change } = props;
+export default function Pizza(props) {
+  const { values, disabled, submit, change, errors } = props; // should have errors prop
 
   const onChange = (evt) => {
     const { name, value, type, checked } = evt.target;
     const valueToUse = type === "checkbox" ? checked : value;
     change(name, valueToUse);
-    debugger;
   };
 
   const onSubmit = (evt) => {
@@ -18,6 +17,13 @@ export default function MemberForm(props) {
   return (
     <form onSubmit={onSubmit}>
       <div>
+        <div>
+          <div>{errors.name}</div>
+          <div>{errors.email}</div>
+          <div>{errors.specialInstructions}</div>
+          <div>{errors.pizzaSize}</div>
+        </div>
+
         <label>
           {`Full Name `}
           <input

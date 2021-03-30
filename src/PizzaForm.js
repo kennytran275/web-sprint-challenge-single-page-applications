@@ -21,7 +21,6 @@ const initialFormValues = {
 const initialFormErrors = {
   name: "",
   email: "",
-  password: "",
   specialInstructions: "",
   pizzaSize: "",
 };
@@ -99,6 +98,8 @@ export default function PizzaForm() {
         values={formValues}
         submit={submitForm}
         change={inputChange}
+        // should have errors prop here
+        errors={formErrors}
         disabled={disabled}
       />
 
